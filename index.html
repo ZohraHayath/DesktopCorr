@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Desktop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles/desktop.css">
+</head>
+<body>
+    <main id="desktop-environment">
+        <div class="desktop-icon" id="cortex-icon">
+            <img src="/floppy-disk.png" alt="Floppy Disk Icon">
+            <span>cortex_01.exe</span>
+        </div>
+        <div class="desktop-icon" id="readme-icon">
+            <img src="/readme-icon.png" alt="Text File Icon">
+            <span>cortex_readme.txt</span>
+        </div>
+    </main>
+    <div id="readme-modal-backdrop" class="hidden">
+        <div id="readme-modal">
+            <div class="title-bar">
+                <span>readme.txt - Notepad</span>
+                <button id="close-readme-btn">×</button>
+            </div>
+            <div class="content">
+                <h4>DESCRIPTION</h4>
+                <p>An archival piece of decaying & sputtering interactive simulation of an organism under evolving & mutating cognitive load.</p>
+                <br><br>
+                <p class="quote">A single clot, birth of thought<br>Evolution of being, rupture under load.</p>
+                <h4>INSTRUCTIONS</h4>
+                <p>No spaces, 30 chars allowed.<br>No exit, commit to it.</p>
+                <br><br><br>
+                <p>@hyyartth</p>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/scripts/desktop.ts"></script>
+</body>
+</html>

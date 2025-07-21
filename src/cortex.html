@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Cortex</title>
+       <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/cortex.css">
+</head>
+<body>
+    <div id="game-container">
+<div id="fade-overlay"></div>
+    <div id="opening-sequence">
+        <div id="clot"></div>
+    </div>
+    <canvas id="explosion-canvas"></canvas>
+    <div id="explosion-flash-overlay"></div>
+    <div id="app" class="hidden">
+        <div id="cortex-container" class="state-1-size">
+            <img id="brain-stage-1" class="brain-state" src="/brain1.png" alt="Brain State 1">
+            <img id="brain-stage-2" class="brain-state" src="/brain2.gif" alt="Brain State 2">
+            <img id="brain-stage-3" class="brain-state" src="/brain3.gif" alt="Brain State 3">
+        </div>
+        <div id="debug-panel" style="display: none;">
+            <p>Unique Words: <span id="unique-word-count">0</span></p>
+            <p>Total Units: <span id="total-unit-count">0</span></p>
+            <p>Ghost Words: <span id="ghost-word-count">0</span></p>
+            <p>Mutated Words: <span id="mutated-word-count">0</span></p>
+        </div>
+    </div>
+    </div>
+    
+    <script type="module" src="/src/scripts/cortex.ts"></script>
+</body>
+</html>

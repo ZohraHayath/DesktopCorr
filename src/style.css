@@ -1,0 +1,46 @@
+html {
+    background: #111;
+    font-family: 'Nunito', sans-serif;
+}
+body, html {
+    margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden;
+}
+#desktop-environment {
+    display: flex; flex-direction: column; align-items: flex-start;
+    padding: 50px; gap: 30px; height: 100vh; box-sizing: border-box;
+}
+.desktop-icon {
+    display: flex; flex-direction: column; align-items: center;
+    width: 100px; cursor: pointer; text-align: center;
+    transition: transform 0.2s ease-out;
+}
+.desktop-icon:hover { transform: scale(1.05); }
+.desktop-icon img { width: 80px; height: 80px; margin-bottom: 10px; }
+.desktop-icon span { color: #ccc; font-size: 0.9rem; padding: 2px 4px; }
+.desktop-icon:hover span { background-color: #005fcc; color: white; }
+#readme-modal-backdrop {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.3); z-index: 1000; display: flex;
+    justify-content: center; align-items: center; opacity: 0;
+    pointer-events: none; transition: opacity 0.3s;
+}
+#readme-modal-backdrop:not(.hidden) { opacity: 1; pointer-events: all; }
+#readme-modal {
+    background: #f0f0f0; color: #000; width: 500px;
+    border: 1px solid #aaa; box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+.title-bar {
+    background: #ddd; padding: 5px 10px; border-bottom: 1px solid #aaa;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.9rem;
+}
+#close-readme-btn {
+    background: #e0e0e0; border: 1px solid #999; width: 20px; height: 20px;
+    line-height: 15px; text-align: center; cursor: pointer;
+}
+.content { padding: 20px; font-family: 'Courier New', Courier, monospace; }
+.content h4 { font-size: 0.8rem; letter-spacing: 2px; opacity: 0.7; margin: 20px 0 8px 0; }
+.content p { font-size: 0.95rem; line-height: 1.5; margin: 0; }
+.content .quote { font-style: italic; }
+.content .author { display: block; text-align: right; margin-top: 10px; opacity: 0.8; }
+.hidden { display: none !important; }
