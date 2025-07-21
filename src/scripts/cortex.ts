@@ -46,16 +46,13 @@ const MAX_UNIQUE_WORDS = 35;
       .play()
       .catch((error) => console.error(`Audio Error: ${soundName}`, error));
   }
-  function startLoop(soundName: string, startMuted = false) {
-    if (currentLoop && currentLoop.src.includes(soundName)) return;
-    if (currentLoop) currentLoop.pause();
-    currentLoop = new Audio(`/sounds/${soundName}`);
-    currentLoop.loop = true;
-    //  currentLoop.muted = startMuted;
-    currentLoop
-      .play()
-      .catch((error) => console.error(`Audio Error: ${soundName}`, error));
-  }
+function startLoop(soundName: string) {
+        if (currentLoop && currentLoop.src.includes(soundName)) return;
+        if (currentLoop) currentLoop.pause();
+        currentLoop = new Audio(`/sounds/${soundName}`);
+        currentLoop.loop = true;
+        currentLoop.play().catch(error => console.error(`Audio Error: ${soundName}`, error));
+    }
   function stopAllLoops() {
     if (currentLoop) {
       currentLoop.pause();
@@ -96,7 +93,7 @@ const MAX_UNIQUE_WORDS = 35;
   }
   const clot = document.getElementById("clot") as HTMLElement;
   clot.addEventListener("click", startGame, { once: true });
-  startLoop("clotPulse.m4a", true);
+  startLoop("clotPulse.m4a");
 
   // --- AESTHETICS & ANIMATION ---
   function updateOrganicState() {
@@ -548,4 +545,4 @@ function triggerExplosion() {
   // Initial listener for the game part
   //const clot = document.getElementById('clot') as HTMLElement;
   clot.addEventListener("click", startGame, { once: true });
-  startLoop("clotPulse.m4a", true);
+  startLoop("clotPulse.m4a");
