@@ -233,15 +233,18 @@ function triggerExplosion() {
     }
   }
   function handleEmptyState() {
-    const container = document.getElementById(
-      "cortex-container"
-    ) as HTMLElement;
+    const container = document.getElementById('cortex-container') as HTMLElement;
     if (!container) return;
-    container.classList.add("dissolve");
-    container.addEventListener("animationend", () => location.reload(), {
-      once: true,
-    });
-  }
+
+    // 1. It adds the 'dissolve' class to trigger your CSS fade-out animation.
+    container.classList.add('dissolve');
+
+    // 2. It waits for that animation to finish, and then...
+    container.addEventListener('animationend', () => {
+        // 3. ...it reloads the page.
+        location.reload(); 
+    }, { once: true });
+}
   function popWordBox(box: WordBox) {
     box.element.remove();
     const index = wordInstances.indexOf(box);
