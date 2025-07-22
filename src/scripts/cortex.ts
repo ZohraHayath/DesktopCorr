@@ -3,7 +3,7 @@ import '../styles/cortex.css'
 
 const MAX_UNIQUE_WORDS = 35;
   const MAX_WORD_LENGTH = 30;
-  const UNIT_CAP = 300;
+  const UNIT_CAP = 180;
 
   // --- INTERFACES & GAME STATE ---
   interface WordBox {
@@ -101,8 +101,8 @@ function startLoop(soundName: string) {
       "cortex-container"
     ) as HTMLElement;
     if (!container) return;
-    const STAGE_2_THRESHOLD = 100;
-    const STAGE_3_THRESHOLD = 220;
+    const STAGE_2_THRESHOLD = 60;
+    const STAGE_3_THRESHOLD = 120;
     const stage1Img = document.getElementById("brain-stage-1") as HTMLElement;
     const stage2Img = document.getElementById("brain-stage-2") as HTMLElement;
     const stage3Img = document.getElementById("brain-stage-3") as HTMLElement;
@@ -246,7 +246,7 @@ function triggerExplosion() {
     box.element.remove();
     const index = wordInstances.indexOf(box);
     if (index > -1) wordInstances.splice(index, 1);
-    totalUnits -= box.isGhost ? 10 : 1;
+    totalUnits -= box.isGhost ? 5 : 1;
     if (box.isGhost) ghostWordCount--;
     const currentCount = (wordCounts.get(box.word) || 1) - 1;
     if (currentCount <= 0) {

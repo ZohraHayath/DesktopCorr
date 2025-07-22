@@ -235,7 +235,7 @@ html {
 }
 .word-box {
   position: absolute;
-  padding: 8px 12px;
+  padding: 2px 2px;
   background-color: #9c2a38;
   color: #d1c9c9;
   border: 1px solid #0f0b05;
@@ -245,10 +245,12 @@ html {
   font-size: 1.1rem;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   z-index: 10;
+  opacity: 70%;
 }
 .ghost-box {
-  background-color: #b6b2b2;
+  background-color: #100f0f;
   border-color: #867828;
+  padding: 2px 2px;
   font-weight: bold;
 }
 #initial-input-container,
